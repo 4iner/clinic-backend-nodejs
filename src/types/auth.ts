@@ -6,8 +6,8 @@ export interface User {
 }
 
 export enum Role {
-  ADMIN = 'admin',
-  USER = 'user'
+  ADMIN = 'ROLE_ADMIN',
+  USER = 'ROLE_USER'
 }
 
 export interface SignInRequest {
