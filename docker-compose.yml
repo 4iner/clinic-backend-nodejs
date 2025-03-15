@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - JWT_SECRET=your_jwt_secret_here  # Change this in production
+    volumes:
+      - ./src:/usr/src/app/src  # For development hot-reload
+    command: npm run dev  # Use development mode with hot-reload 
