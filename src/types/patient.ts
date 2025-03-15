@@ -1,21 +1,19 @@
-export enum Gender {
-  MALE = 'MALE',
-  FEMALE = 'FEMALE',
-  OTHER = 'OTHER'
-}
+import { Gender } from './gender';
+import { Visit } from './visit';
 
 export interface Patient {
   id: number;
   firstName: string;
   lastName: string;
-  middleName?: string;
+  middleName: string;
   phoneNumber: string;
   country: string;
-  email?: string;
-  dateOfBirth: string; // ISO date string
+  email: string;
+  dateOfBirth: string;
   gender: Gender;
   createdAt: string;
   updatedAt: string;
+  visits: Visit[];  // Required array of visits, will be empty if no visits exist
 }
 
 export interface CreatePatientRequest {
@@ -24,7 +22,7 @@ export interface CreatePatientRequest {
   middleName?: string;
   phoneNumber: string;
   country: string;
-  email?: string;
+  email: string;
   dateOfBirth: string;
   gender: Gender;
 }
