@@ -29,7 +29,7 @@ class DatabaseService {
         id: 1,
         username: 'Demo',
         password: hash,
-        role: Role.ADMIN
+        roles: [Role.ADMIN, Role.USER]
       });
     }
   }

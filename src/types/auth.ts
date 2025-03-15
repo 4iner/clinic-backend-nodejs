@@ -2,7 +2,7 @@ export interface User {
   id: number;
   username: string;
   password: string;
-  role: Role;
+  roles: Role[];
 }
 
 export enum Role {
@@ -16,8 +16,10 @@ export interface SignInRequest {
 }
 
 export interface SignInResponse {
+  id: number;
   username: string;
-  token: string;
+  jwtToken: string;
+  roles: Role[];
 }
 
 export interface ErrorResponse {

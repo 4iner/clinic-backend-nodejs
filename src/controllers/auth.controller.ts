@@ -27,13 +27,13 @@ export class AuthController {
       }
 
       // Generate JWT token
-      const token = jwt.sign(
+      const jwtToken = jwt.sign(
         { userId: user.id, username: user.username },
         config.jwtSecret,
         { expiresIn: '10h' }
       );
 
-      res.json({ username, token });
+      res.json({ id: user.id, username, jwtToken, roles: user.roles });
     } catch (error) {
       console.error('Signin error:', error);
       res.status(500).json({ message: 'Internal server error' });
