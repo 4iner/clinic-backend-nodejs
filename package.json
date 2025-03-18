@@ -4,9 +4,9 @@
   "description": "Clinic management system backend",
   "main": "dist/index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production tsc",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
-    "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "NODE_ENV=production tsc",
+    "start": "NODE_ENV=production node dist/index.js",
+    "dev": "NODE_ENV=development ts-node-dev --respawn --transpile-only src/index.ts",
     "docker:build": "docker build -t clinic-backend .",
     "docker:run": "docker run -p 3000:3000 clinic-backend",
     "docker:compose": "docker-compose up",
